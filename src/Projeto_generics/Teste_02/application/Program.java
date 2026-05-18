@@ -2,6 +2,7 @@ package Projeto_generics.Teste_02.application;
 
 
 import Projeto_generics.Teste_02.entities.Product;
+import Projeto_generics.Teste_02.services.CalculationService;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -21,14 +22,13 @@ public class Program {
             String values = br.readLine();
             while (values != null){
                 String[] fields = values.split(",");
-                products.add(new Product(fields[0]),Double.parseDouble(fields[1]));
+                products.add(new Product(fields[0],Double.parseDouble(fields[1])));
                 values = br.readLine();
             }
+            Product x = CalculationService.max(products);
+            System.out.println(x);
         }catch (IOException e){
             System.out.println(e.getMessage());
         }
-
-
-
     }
 }

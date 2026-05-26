@@ -18,6 +18,8 @@ public class teste01 {
         vetor.insereElementos("Elemento 2",2);
         vetor.insereElementos("Elemento 1",1);
         System.out.println(vetor);
+        vetor.removeElementos(2);
+        System.out.println(vetor);
 
 
     }

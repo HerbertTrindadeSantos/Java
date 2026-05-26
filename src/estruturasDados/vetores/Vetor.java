@@ -73,6 +73,16 @@ public class Vetor {
         this.elementos[index] = elemento;
     }
 
+    public void removeElementos(int index) throws IllegalArgumentException {
+        if (!(this.tamanho > index & this.tamanho >= 0)){
+            throw new IllegalArgumentException("Posicao invalida");
+        }
+        for (int i = index; i < this.tamanho - 1; i++) {
+            this.elementos[i] = elementos[i+1];
+        }
+        this.tamanho--;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

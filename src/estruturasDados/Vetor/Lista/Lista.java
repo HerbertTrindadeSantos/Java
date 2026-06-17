@@ -1,12 +1,17 @@
-package estruturasDados.Vetor.vetores;
+package estruturasDados.Vetor.Lista;
 
-public class VetorObjetos {
+public class Lista<T> {
 
-    private Object[] elementos;
+    private T[] elementos;
     private int tamanho;
 
-    public VetorObjetos(int capacidade) {
-        this.elementos = new Object[capacidade];
+    public Lista() {
+        this.elementos = (T[]) new Object[10];
+        this.tamanho = 10;
+    }
+
+    public Lista(int capacidade) {
+        this.elementos = (T[]) new Object[capacidade];
         this.tamanho = 0;
     }
 
@@ -16,11 +21,11 @@ public class VetorObjetos {
             for (int i = 0; i < tamanho; i++) {
                 elementosNovos[i] = this.elementos[i];
             }
-            this.elementos = elementosNovos;
+            this.elementos = (T[]) elementosNovos;
         }
     }
 
-    public void adiciona(Object elemento) throws IllegalStateException {
+    public void adiciona(T elemento) throws IllegalStateException {
         this.aumentaTamanho();
         if (this.tamanho < this.elementos.length) {
             this.elementos[this.tamanho] = elemento;
@@ -30,17 +35,24 @@ public class VetorObjetos {
         }
     }
 
+    public boolean contem(T elemento) {
+        if (buscaNome(elemento) >= 0) {
+            return true;
+        }
+        return false;
+    }
+
     public int getTamanho() {
         return this.tamanho;
     }
 
-    public int buscaNome(Object elemento) throws IllegalArgumentException {
+    public int buscaNome(T elemento) {
         for (int i = 0; i < this.tamanho; i++) {
             if (this.elementos[i].equals(elemento)) {
                 return i;
             }
         }
-        throw new IllegalArgumentException("Nao tem esse elemento no vetor");
+        return -1;
     }
 
     public Object buscaPosicao(int index) {
@@ -50,7 +62,20 @@ public class VetorObjetos {
         return this.elementos[index];
     }
 
-    public void insereElementos(Object elemento, int index) throws IllegalArgumentException {
+    public int BuscaUltimaPosicaoElemento(T elemento) {
+        int pos = 0;
+        for (int i = 0; i < this.tamanho; i++) {
+            if (this.elementos[i].equals(elemento)) {
+                pos = i;
+            }
+        }
+        if (pos > 0){
+            return pos;
+        }
+        return -1;
+    }
+
+    public void insereElementos(T elemento, int index) throws IllegalArgumentException {
         if (!(this.tamanho >= 0 && this.tamanho > index)) {
             throw new IllegalArgumentException("Posicao invalida");
         }
@@ -71,6 +96,7 @@ public class VetorObjetos {
         }
         this.tamanho--;
     }
+
 
     @Override
     public String toString() {

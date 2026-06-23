@@ -1,8 +1,8 @@
-package estruturasDados.Collections.Vetor.testes;
+package estruturasDados.Collections.estruturaVetor.testes;
 
-import estruturasDados.Collections.Vetor.Lista.Lista;
+import estruturasDados.Collections.estruturaVetor.Lista.Lista;
 
-public class teste11 {
+public class teste10 {
     public static void main(String[] args) {
         Lista<String> nomes = new Lista<>();
         nomes.adicionar("Arvore");
@@ -10,7 +10,7 @@ public class teste11 {
         nomes.adicionar("Teclado");
         nomes.adicionar("Ciclete");
         nomes.adicionar("Arvore");
-        nomes.remover("Arvore");
-        System.out.println(nomes);
+        System.out.println(nomes.ultimaOcorrencia("Arvore"));
+        System.out.println(nomes.ultimaOcorrencia("Filho"));
     }
 }

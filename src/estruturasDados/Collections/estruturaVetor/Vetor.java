@@ -1,23 +1,18 @@
-package estruturasDados.Collections.Vetor.Lista;
+package estruturasDados.Collections.estruturaVetor;
 
-public class Lista<T> {
 
-    private T[] elementos;
+public class Vetor {
+    private Object[] elementos;
     private int capacidade;
 
-    public Lista() {
-        this.elementos = (T[]) new Object[10];
-        this.capacidade = 0;
-    }
-
-    public Lista(int capacidade) {
-        this.elementos = (T[]) new Object[capacidade];
+    public Vetor(int capacidade) {
+        this.elementos = new Object[capacidade];
         this.capacidade = 0;
     }
 
     public void aumentaCapacidade() {
         if (this.capacidade == this.elementos.length) {
-            T[] novoVetor = (T[]) new Object[this.elementos.length * 2];
+            Object[] novoVetor = new Object[this.elementos.length * 2];
             for (int i = 0; i < this.capacidade; i++) {
                 novoVetor[i] = this.elementos[i];
             }
@@ -25,14 +20,7 @@ public class Lista<T> {
         }
     }
 
-    public T obtem(int index){
-        if (!(index >= 0 && this.capacidade > index)){
-            throw new IllegalArgumentException("Posicao invalida");
-        }
-        return this.elementos[index];
-    }
-
-    public void adicionar(T elemento) {
+    public void adicionar(Object elemento) {
         aumentaCapacidade();
         if (!(this.elementos.length > this.capacidade)) {
             throw new ArrayIndexOutOfBoundsException("Não há espaco no vetor");
@@ -41,7 +29,7 @@ public class Lista<T> {
         this.capacidade++;
     }
 
-    public boolean adicionar(T elemento, int index) {
+    public boolean adicionar(Object elemento, int index) {
         if (!(this.capacidade > index && index >= 0)) {
             throw new IllegalArgumentException("Posição invalida.");
         }
@@ -64,56 +52,25 @@ public class Lista<T> {
         this.capacidade--;
     }
 
-    public void remover(T elemento) {
-        int pos = this.posicao(elemento);
-        if (pos > -1) {
-            remover(pos);
-        }
-    }
-
-    public void limpar(){
-        for (int i = 0; i < this.capacidade; i++) {
-            this.elementos[i] = null;
-        }
-        this.capacidade = 0;
-    }
-
-    public Boolean contem(T elemento) {
-        if (posicao(elemento) >= 0) {
-            return true;
-        }
-        return false;
-    }
-
     public int tamanho() {
         return this.capacidade;
     }
 
-    public int posicao(T elemento) {
+    public int posicao(Object elemento) {
         for (int i = 0; i < this.capacidade; i++) {
             if (this.elementos[i].equals(elemento)) {
                 return i;
             }
         }
-        return -1;
+        throw new IllegalArgumentException("Não esse elemento no vetor");
     }
 
-    public T busca(int index) {
+    public Object busca(int index) {
         if (!(index < this.capacidade && index >= 0)) {
             throw new IllegalArgumentException("Posição invalida.");
         }
         return this.elementos[index];
     }
-
-    public int ultimaOcorrencia(T elemento) {
-        for (int i = this.capacidade - 1; i >= 0; i--) {
-            if (this.elementos[i].equals(elemento)) {
-                return i;
-            }
-        }
-        return -1;
-    }
-
 
     @Override
     public String toString() {
@@ -125,10 +82,6 @@ public class Lista<T> {
         if (this.capacidade > 0) {
             sb.append(this.elementos[this.capacidade - 1]).append("]");
         }
-        if (this.capacidade == 0){
-            sb.append("]");
-        }
         return sb.toString();
     }
 }
-

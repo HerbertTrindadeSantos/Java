@@ -1,6 +1,6 @@
-package estruturasDados.Collections.Vetor.testes;
+package estruturasDados.Collections.estruturaVetor.testes;
 
-import estruturasDados.Collections.Vetor.Lista.Lista;
+import estruturasDados.Collections.estruturaVetor.Lista.Lista;
 
 public class teste13 {
     public static void main(String[] args) {

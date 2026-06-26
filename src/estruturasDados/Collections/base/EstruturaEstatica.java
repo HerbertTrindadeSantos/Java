@@ -50,7 +50,7 @@ public class EstruturaEstatica<T> {
     }
 
     protected void remove(int index) {
-        if ((this.capacidade > index && index >= 0)) {
+        if (!(this.capacidade > index && index >= 0)) {
             throw new IllegalArgumentException("Posicao invalida");
         }
         for (int i = index; i < this.capacidade - 1; i++) {

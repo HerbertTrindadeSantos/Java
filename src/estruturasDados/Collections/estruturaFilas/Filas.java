@@ -20,7 +20,9 @@ public class Filas<T> extends EstruturaEstatica<T> {
         if (this.estaVazia()){
             return null;
         }
+        T item = this.elementos[0];
         super.remove(0);
+        return item;
     }
 
     public T espiar() {

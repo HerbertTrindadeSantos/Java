@@ -11,16 +11,12 @@ public class ListaEncadeada<T> {
        if (this.tamanho == 0){
            this.inicio = celula;
        }else {
-
+            this.ultimo.setProximo(celula);
        }
         this.ultimo = celula;
         this.tamanho++;
     }
 
-    public void adicionar(T elemento){
-        No<T> celula = new No<>(this.inicio.getElemento(),new No<>(elemento));
-        this.tamanho++;
-    }
 
 
     public int getTamanho(){
@@ -28,11 +24,12 @@ public class ListaEncadeada<T> {
     }
 
 
-
     @Override
     public String toString() {
         return "ListaEncadeada{" +
                 "inicio=" + inicio +
+                ", ultimo=" + ultimo +
+                ", tamanho=" + tamanho +
                 '}';
     }
 }

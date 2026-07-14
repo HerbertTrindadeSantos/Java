@@ -28,6 +28,7 @@ public class EstruturaEstatica<T> {
         }
     }
 
+
     public void adiciona(T elemento) {
         aumentaCapacidade();
         if (this.elementos.length > this.capacidade) {
@@ -37,10 +38,20 @@ public class EstruturaEstatica<T> {
     }
 
     protected boolean adiciona(T elemento, int index) {
-        if (!(this.capacidade > index && index >= 0)) {
+
+        if (this.capacidade < index || index < 0) {
             throw new IllegalArgumentException("Posicao invalida");
         }
+
         aumentaCapacidade();
+
+        if (this.capacidade == index) {
+            if (this.elementos[index] == null) {
+                this.elementos[index] = elemento;
+                this.capacidade++;
+                return false;
+            }
+        }
         for (int i = this.capacidade - 1; i >= index; i--) {
             this.elementos[i + 1] = this.elementos[i];
         }
@@ -50,7 +61,7 @@ public class EstruturaEstatica<T> {
     }
 
     protected void remove(int index) {
-        if ((this.capacidade > index && index >= 0)) {
+        if (!(this.capacidade > index && index >= 0)) {
             throw new IllegalArgumentException("Posicao invalida");
         }
         for (int i = index; i < this.capacidade - 1; i++) {

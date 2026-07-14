@@ -1,4 +1,4 @@
-package estruturasDados.Algoritmos_leetCode.isPalindrome.application;
+ package estruturasDados.Algoritmos_leetCode.isPalindrome.application;
 
 import estruturasDados.Algoritmos_leetCode.isPalindrome.services.Solution;
 

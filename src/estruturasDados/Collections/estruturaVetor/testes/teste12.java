@@ -2,6 +2,8 @@ package estruturasDados.Collections.estruturaVetor.testes;
 
 import estruturasDados.Collections.estruturaVetor.Lista.Lista;
 
+import java.util.ArrayList;
+
 public class teste12 {
     public static void main(String[] args) {
         Lista<String> nomes = new Lista<>();

@@ -139,7 +139,7 @@ public class ListaEncadeada<T> {
         return noAtual;
     }
 
-    public T buscaElemento(int posicao) {
+    public T RemoverFinal(int posicao) {
         return this.buscaNo(posicao).getElemento();
     }
 

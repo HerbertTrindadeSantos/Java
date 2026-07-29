@@ -10,13 +10,13 @@ public class teste12 {
         lista.adiciona("Frigideira");
         lista.adiciona("Bicicleta");
         System.out.println(lista);
-        System.out.println(lista.removerUltimoElemento());
+        System.out.println(lista.removeFinal());
         System.out.println(lista);
-        System.out.println(lista.removerUltimoElemento());
+        System.out.println(lista.removeFinal());
         System.out.println(lista);
-        System.out.println(lista.removerUltimoElemento());
+        System.out.println(lista.removeFinal());
         System.out.println(lista);
-        System.out.println(lista.removerUltimoElemento());
+        System.out.println(lista.removeFinal());
         System.out.println(lista);
 
 

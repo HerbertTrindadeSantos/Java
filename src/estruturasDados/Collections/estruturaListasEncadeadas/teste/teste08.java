@@ -9,10 +9,10 @@ public class teste08 {
         lista.adiciona("Termometro");
         lista.adiciona("Frigideira");
         lista.adiciona("Bicicleta");
-        System.out.println(lista.buscaElemento(0));
-        System.out.println(lista.buscaElemento(1));
-        System.out.println(lista.buscaElemento(2));
-        System.out.println(lista.buscaElemento(3));
-        System.out.println(lista.buscaElemento(-1));
+        System.out.println(lista.RemoverFinal(0));
+        System.out.println(lista.RemoverFinal(1));
+        System.out.println(lista.RemoverFinal(2));
+        System.out.println(lista.RemoverFinal(3));
+        System.out.println(lista.RemoverFinal(-1));
     }
 }

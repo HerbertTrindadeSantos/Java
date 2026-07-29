@@ -10,15 +10,15 @@ public class teste10 {
         lista.adiciona("Frigideira");
         lista.adiciona("Bicicleta");
         System.out.println(lista);
-        System.out.println(lista.removerPrimeiroElemento());
+        System.out.println(lista.removeInicio());
         System.out.println(lista);
-        System.out.println(lista.removerPrimeiroElemento());
+        System.out.println(lista.removeInicio());
         System.out.println(lista);
-        System.out.println(lista.removerPrimeiroElemento());
+        System.out.println(lista.removeInicio());
         System.out.println(lista);
-        System.out.println(lista.removerPrimeiroElemento());
+        System.out.println(lista.removeInicio());
         System.out.println(lista);
-        System.out.println(lista.removerPrimeiroElemento());
+        System.out.println(lista.removeInicio());
         System.out.println(lista);
 
     }

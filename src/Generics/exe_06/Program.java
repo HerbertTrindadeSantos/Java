@@ -35,6 +35,7 @@ public class Program {
                 int codStudent = sc.nextInt();
                 instructor.addStudent(new Student(codStudent,course));
             }
+            System.out.println();
         }
 
 
